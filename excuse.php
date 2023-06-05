@@ -18,6 +18,9 @@
         <label for="teacher_name">Teacher's Name:</label>
         <input type="text" id="teacher_name" name="teacher_name" required><br><br>
 
+        <label for="parent_name">Parent's Name:</label>
+        <input type="text" id="parent_name" name="parent_name" required><br><br>
+
         <label for="excuse_reason">Reason for Absence:</label><br>
         <input type="radio" id="illness" name="excuse_reason" value="illness" required>
         <label for="illness">Illness</label><br>
@@ -39,8 +42,10 @@
         $reason = $_POST["excuse_reason"];
         $pronoun = $gender == "boy" ? "he" : "she";
         $perso = $gender == "boy" ? "his" : "her";
+        $parent = $_POST["parent_name"];
 
         $currentDate = date("l, \\t\\h\\e jS F Y");
+        $child_gender = "boy" ? "son" : "daughter";
     
         $excuse = "";
         switch ($reason) {
@@ -55,12 +60,12 @@
                      Please provide any necessary materials for $perso to keep up with the classwork.",
 
                     "$childName is unable to come to school today due to an illness. 
-                    $pronoun has been experiencing severe headaches and fatigue, which require $pronoun to stay home and receive proper rest. 
+                    $pronoun has been experiencing severe headaches and fatigue, which require $childName to stay home and receive proper rest. 
                     I kindly request your understanding and cooperation in providing $perso with the missed classwork.",
 
                     "Due to illness, $childName will be absent from school today. 
                     $pronoun has been experiencing stomach discomfort and is under medical supervision. 
-                    Please let me know of any assignments or tasks $perso needs to complete during $pronoun's absence."
+                    Please let me know of any assignments or tasks $perso needs to complete during $perso absence."
                 );
                 $excuse = $excuses[array_rand($excuses)];
                 break;
@@ -131,7 +136,10 @@
     
         // Display the personalized excuse
         echo "<h2>Generated Apology</h2>";
-        echo "<p> Dear $teacherName , $excuse </p>";
+        echo "<p> $currentDate </p>";
+        echo "<p> Dear $teacherName ,</p>";
+        echo "<p> $excuse </p>";
+        echo "<p> $parent. </p>";
     }
     ?>
     
