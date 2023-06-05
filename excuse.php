@@ -4,39 +4,40 @@
     
     <link href="./css/style.css" rel="stylesheet" type="text/css" >
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
     <title>Apology Generator</title>
 
    
 </head>
 <body>
-    <h1>Apology Generator</h1>
-    
-    <form method="post" action="excuse.php">
-    <fieldset>
+    <header>
+    <img src="./assets/sorry.png" >
+        <h1>Apology Generator</h1>
+    </header>
+    <div class=form_container>
+         <form method="post" action="excuse.php">
+            <fieldset>
+                 <legend> fill your informations here : </legend>
+            <label for="child_name">Child's Name:</label>
+            <input type="text" id="child_name" name="child_name" class="input_text" required><br><br>
 
-    <legend> fill your informations here : </legend>
-        <label for="child_name">Child's Name:</label>
-        <input type="text" id="child_name" name="child_name" class="input_text" required><br><br>
+            <label for="child_gender">Child's Gender:</label>
+            <input type="radio" id="girl" name="child_gender" value="girl" required>
+            <label for="girl">Girl</label>
+            <input type="radio" id="boy" name="child_gender" value="boy" required>
+            <label for="boy">Boy</label><br><br>
 
-        <label for="child_gender">Child's Gender:</label>
-        <input type="radio" id="girl" name="child_gender" value="girl" required>
-        <label for="girl">Girl</label>
-        <input type="radio" id="boy" name="child_gender" value="boy" required>
-        <label for="boy">Boy</label><br><br>
+            <label for="teacher_name">Teacher's Name:</label>
+            <input type="text" id="teacher_name" name="teacher_name" class="input_text" required><br><br>
 
-        <label for="teacher_name">Teacher's Name:</label>
-        <input type="text" id="teacher_name" name="teacher_name" class="input_text" required><br><br>
-
-        <label for="parent_name">Parent's Name:</label>
-        <input type="text" id="parent_name" name="parent_name" class="input_text" required><br><br>
-    </fieldset>    
-
+            <label for="parent_name">Parent's Name:</label>
+            <input type="text" id="parent_name" name="parent_name" class="input_text" required><br><br>
+            </fieldset>    
+     
     <fieldset>
         <legend> Reason of absence : </legend>
 
-        <label for="excuse_reason">Reason for Absence:</label><br>
         <input type="radio" id="illness" name="excuse_reason" value="illness" required>
         <label for="illness">Illness</label><br>
         <input type="radio" id="pet_death" name="excuse_reason" value="pet_death" required>
@@ -48,6 +49,7 @@
     </fieldset>
         <input type="submit" value="Generate Apology">
     </form>
+</div>
 
     <?php
     if (isset($_POST["child_name"]) && isset($_POST["child_gender"]) && isset($_POST["teacher_name"]) && isset($_POST["excuse_reason"])) {
@@ -148,13 +150,13 @@
                 $excuse = $excuses[array_rand($excuses)];
                 break;
         }
-    
-   
+
         echo "<h2>Generated Apology</h2>";
         echo "<p> $currentDate </p>";
         echo "<p> Dear $teacherName ,</p>";
         echo "<p> $excuse </p>";
         echo "<p> $parent. </p>";
+  
     }
     ?>
     
