@@ -1,0 +1,59 @@
+body {
+  font-family: "Caveat", cursive;
+  background-color: #56494C;
+  height: 100vh;
+}
+body header {
+  display: flex;
+  justify-content: baseline;
+}
+body header img {
+  height: 150px;
+  width: 150px;
+  margin-top: 0;
+}
+body header h1 {
+  text-align: center;
+  font-size: 50px;
+  color: #847E89;
+  margin-left: 100px;
+}
+body .form_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: column;
+}
+body .form_container fieldset {
+  padding: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #847E89;
+  border-radius: 20px;
+}
+body .form_container legend {
+  color: #847E89;
+  font-weight: bold;
+  font-size: 15px;
+}
+body .form_container form {
+  flex-basis: 50%;
+  margin: 0 auto;
+}
+body .form_container form .input_text {
+  line-height: 1;
+  padding: 0 10px;
+  background-color: #fff;
+  border: 2px solid silver;
+  width: clamp(150px, 50%, 300px);
+  height: 20px;
+  border-radius: 30px;
+}
+body .excuse_field {
+  border: 1px solid #847E89;
+}
+body .excuse_field h2 {
+  text-align: center;
+}
+body .excuse_field p {
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */
