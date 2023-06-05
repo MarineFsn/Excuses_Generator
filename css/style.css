@@ -1,0 +1,39 @@
+body {
+  font-family: "Caveat", cursive;
+  background-color: #56494C;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+body h1 {
+  flex-basis: 100vh;
+  text-align: center;
+  font-size: 50px;
+  color: #847E89;
+}
+body fieldset {
+  padding: 0 20px 20px 20px;
+  margin-bottom: 10px;
+  border: 1px solid #847E89;
+}
+body legend {
+  color: #847E89;
+  font-weight: bold;
+}
+body form {
+  width: 280px;
+  flex-basis: 50vh;
+  margin: 0 auto;
+}
+body form .input_text {
+  line-height: 1;
+  padding: 0 10px;
+  background-color: #fff;
+  border: 2px solid silver;
+  width: clamp(150px, 50%, 300px);
+  height: 20px;
+  border-radius: 30px;
+}
+body form button {
+  margin: 0 auto;
+}/*# sourceMappingURL=style.css.map */
